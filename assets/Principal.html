@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFood POS - Pantalla de Ventas</title>
+    <link rel="stylesheet" href="../CSS/Primcipal.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🍔 <span>Bite</span>POS</div>
+        <div id="datetime" class="datetime"></div>
+    </header>
+
+    <div class="pos-container">
+        <div class="main-content">
+            
+            <div class="categories" id="categoryMenu">
+                <button class="cat-btn active" onclick="filtrarCategoria('todas')">🍽️ Todo</button>
+                <button class="cat-btn" onclick="filtrarCategoria('hamburguesas')">🍔 Hamburguesas</button>
+                <button class="cat-btn" onclick="filtrarCategoria('sushi')">🍣 Sushi</button>
+                <button class="cat-btn" onclick="filtrarCategoria('bebidas')">🥤 Bebidas</button>
+                <button class="cat-btn" onclick="filtrarCategoria('extras')">🍟 Extras</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                </div>
+        </div>
+
+        <div class="cart-section">
+            <div class="cart-header">
+                <h3>Orden Actual</h3>
+                <button class="clear-btn" onclick="limpiarCarrito()" title="Vaciar orden">🗑️</button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart-msg">
+                    🍽️ <br> Aún no hay platillos en la orden.
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="totals-row">
+                    <span>Subtotal</span>
+                    <span id="subtotalAmount">$0.00</span>
+                </div>
+                <div class="totals-row">
+                    <span>IVA (16%)</span>
+                    <span id="taxAmount">$0.00</span>
+                </div>
+                <div class="totals-row grand-total">
+                    <span>Total</span>
+                    <span id="totalAmount">$0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn" onclick="procesarPago()">
+                    💳 Cobrar Orden
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="../JS/Principal.js"></script>
+</body>
+</html>
